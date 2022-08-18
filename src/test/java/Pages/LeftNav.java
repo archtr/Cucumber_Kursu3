@@ -18,7 +18,7 @@ public class LeftNav extends Parent{
     private WebElement parameters;
 
     @FindBy(xpath = "//span[text()='Countries']")
-    private WebElement Countries;
+    private WebElement countries;
 
     WebElement myElement;
     public void findAndClick(String strElement){  // 2.aşama
@@ -27,7 +27,7 @@ public class LeftNav extends Parent{
         {
             case "setupOne" : myElement =setupOne; break;
             case "parameters" : myElement =parameters; break;
-            case "Countries" : myElement =Countries; break;
+            case "countries" : myElement =countries; break;
         }
 
         clickFunction(myElement);
