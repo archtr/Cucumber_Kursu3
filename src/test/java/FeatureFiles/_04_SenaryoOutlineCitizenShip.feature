@@ -14,12 +14,15 @@ Feature:  Citizenship with scenario Outline
     Then Already exist message should be displayed
     And Click on close button
 
+    When User delete the "<CitizenshipName>"
+    Then Success message should be displayed
+
     Examples:
       | CitizenshipName | ShortName |
-      | vatanis1        | vatis1    |
-      | vatanis2        | vatis2    |
-      | vatanis3        | vatis3    |
-      | vatanis4        | vatis4    |
-      | vatanis5        | vatis5    |
+      | vatanis11        | vatis11    |
+      | vatanis21        | vatis21    |
+      | vatanis31        | vatis31    |
+      | vatanis41        | vatis41    |
+      | vatanis51        | vatis51    |
 
 
