@@ -39,5 +39,6 @@ public class _01_LoginSteps {
 //        Assert.assertTrue(dc.dashboard.getText().contains("Dashboard"));
 
         dc.findAndContainsText("dashboard","Dashboard");
+        dc.findAndClick("acceptCookies");
     }
 }

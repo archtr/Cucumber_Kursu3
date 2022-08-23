@@ -26,6 +26,18 @@ public class LeftNav extends Parent{
     @FindBy(xpath = "//span[text()='Nationalities']")
     private WebElement nationalities;
 
+    @FindBy(xpath = "//span[text()='Fees']")
+    private WebElement fees;
+
+    @FindBy(xpath = "(//span[text()='Entrance Exams'])[1]")
+    private WebElement entranceExamsOne;
+
+    @FindBy(xpath = "(//span[text()='Setup'])[2]")
+    private WebElement setupTwo;
+
+    @FindBy(xpath = "(//span[text()='Entrance Exams'])[2]")
+    private WebElement entranceExamsTwo;
+
     WebElement myElement;
     public void findAndClick(String strElement){  // 2.aşama
         // burda string isimden weblemente ulaşıcam
@@ -36,6 +48,10 @@ public class LeftNav extends Parent{
             case "countries" : myElement =countries; break;
             case "citizenShip" : myElement =citizenShip; break;
             case "nationalities" : myElement =nationalities; break;
+            case "fees" : myElement =fees; break;
+            case "entranceExamsOne" : myElement =entranceExamsOne; break;
+            case "setupTwo" : myElement =setupTwo; break;
+            case "entranceExamsTwo" : myElement =entranceExamsTwo; break;
         }
 
         clickFunction(myElement);

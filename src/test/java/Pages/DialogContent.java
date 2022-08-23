@@ -64,6 +64,15 @@ public class DialogContent extends Parent{
     @FindBy(xpath = "//span[contains(text(),'Delete')]")
     private WebElement deleteDialogBtn;
 
+    @FindBy(xpath = "//ms-text-field[@formcontrolname='budgetAccountIntegrationCode']//input")
+    private WebElement integrationCode;
+
+    @FindBy(xpath = "//ms-integer-field[@formcontrolname='priority']//input")
+    private WebElement priorityCode;
+
+    @FindBy(xpath = "(//button[@class='consent-give'])[1]")
+    private WebElement acceptCookies;
+
     WebElement myElement;
     public void findAndSend(String strElement, String value){  // 2.aşama
         // burda string isimden weblemente ulaşıcam
@@ -75,6 +84,8 @@ public class DialogContent extends Parent{
             case "codeInput" : myElement =codeInput; break;
             case "shortName" : myElement =shortName; break;
             case "searchInput" : myElement =searchInput; break;
+            case "integrationCode" : myElement =integrationCode; break;
+            case "priorityCode" : myElement =priorityCode; break;
         }
 
         sendKeysFunction(myElement, value);
@@ -91,6 +102,8 @@ public class DialogContent extends Parent{
             case "searchButton" : myElement =searchButton; break;
             case "deleteButton" : myElement =deleteButton; break;
             case "deleteDialogBtn" : myElement =deleteDialogBtn; break;
+            case "acceptCookies" : myElement =acceptCookies; break;
+
         }
 
         clickFunction(myElement);
@@ -116,7 +129,9 @@ public class DialogContent extends Parent{
 //        WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(10));
 //        wait.until(ExpectedConditions.stalenessOf(deleteButton));
 
-        GWD.Bekle(2); // TODO: incelenecek
+        waitUntilLoading();
+
+       // GWD.Bekle(2); // TODO: incelenecek
         findAndClick("deleteButton");// silme butonua bas
         findAndClick("deleteDialogBtn");// dilogdaki silme butonuna bas
     }

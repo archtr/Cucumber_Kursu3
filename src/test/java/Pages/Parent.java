@@ -2,6 +2,7 @@ package Pages;
 
 import Utilities.GWD;
 import junit.framework.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -44,6 +45,11 @@ public class Parent {
     {
         waitUntilVisible(element); // gözükene kadar bekle
         Assert.assertTrue(element.getText().toLowerCase().contains(text.toLowerCase()));
+    }
+
+    public void waitUntilLoading() {
+        WebDriverWait wait=new WebDriverWait(GWD.driver, Duration.ofSeconds(30));
+        wait.until(ExpectedConditions.numberOfElementsToBe(By.cssSelector("fuse-progress-bar > *"), 0));
     }
 
 }

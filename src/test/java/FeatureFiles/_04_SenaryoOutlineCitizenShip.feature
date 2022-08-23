@@ -19,10 +19,10 @@ Feature:  Citizenship with scenario Outline
 
     Examples:
       | CitizenshipName | ShortName |
-      | vatanis11        | vatis11    |
-      | vatanis21        | vatis21    |
-      | vatanis31        | vatis31    |
-      | vatanis41        | vatis41    |
-      | vatanis51        | vatis51    |
+      | vatan1a         | vat1      |
+      | vatan2a         | vat2      |
+      | vatan3a         | vat3      |
+      | vatan4a         | vat4      |
+      | vatan5a         | vat5      |
 
 
