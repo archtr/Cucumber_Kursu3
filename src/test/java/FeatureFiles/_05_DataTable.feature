@@ -81,5 +81,5 @@ Feature: Datatable Functionality
 
     #    Senaryo Outline da verilen değerler için tüm senaryo her satır kadar tekrar çalıştırılıyordu.
     #    DataTable da ise, sadece ilgili step için toplu veri gönderme imkanı oluşuyor.
-    #    TODO: Nurhayat String.class, Kaymakçı tablo yuklenmesini
+    #    TODO: Kaymakçı tablo yuklenmesini
 
