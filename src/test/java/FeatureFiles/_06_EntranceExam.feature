@@ -17,7 +17,7 @@ Feature: Entrance Exam Functionality
       | addButton |
 
     And User sending the keys in Dialog content
-      | nameInput | ismetExam1 |
+      | nameInput | ismetEx4 |
 
     And Click on the element in the Form Content
       | academicPeriod  |
@@ -29,6 +29,16 @@ Feature: Entrance Exam Functionality
 
     And Click on the element in the Dialog
       | saveButton |
+
+    Then Success message should be displayed
+
+    And Click on the element in the left Nav
+      | entranceExamsOne |
+      | setupTwo         |
+      | entranceExamsTwo |
+
+    And User delete item from Dialog
+      | ismetEx4 |
 
     Then Success message should be displayed
 
