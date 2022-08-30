@@ -12,11 +12,12 @@ import org.testng.annotations.Parameters;
 @CucumberOptions(
         tags = "@Regression",
         features = {"src/test/java/FeatureFiles/"},
-        glue = {"StepDefinitions"}
+        glue = {"StepDefinitions"},
+        plugin = { "html:target//cucumber-reports.html" }
 )
 public class _08_TestRunnerParallel extends AbstractTestNGCucumberTests {
 
-    @BeforeClass
+    @BeforeClass(alwaysRun = true) // bazı java versiyon hatalırı için
     @Parameters("browser")
     public void beforeClass(String browser)
     {

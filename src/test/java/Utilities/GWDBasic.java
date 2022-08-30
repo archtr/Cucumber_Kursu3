@@ -13,6 +13,12 @@ import java.util.logging.Logger;
 public class GWDBasic {
     public static WebDriver driver;
 
+    /**
+     *  Interview Sorusu
+     *              Singleton driver nedir?
+     *      Bütün projede aynı ve tek bir driverın kullanılmasıdır.
+     */
+
     public static WebDriver getDriver() {
 
         if (driver == null) {
