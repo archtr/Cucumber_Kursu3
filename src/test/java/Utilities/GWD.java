@@ -37,19 +37,20 @@ public class GWD {
         Logger.getLogger("").setLevel(Level.SEVERE);
         System.setProperty(org.slf4j.impl.SimpleLogger.DEFAULT_LOG_LEVEL_KEY, "Error");
 
+        if (threadBrowserName.get() == null) // paralel çalışmayan yani XML den parametreyle gelmeyen ger çağıran
+            threadBrowserName.set("chrome"); // Basic araynlar için
+
 
         if (threadDriver.get() == null) {
 
             String browserName = threadBrowserName.get(); // bu threaddeki browsername i verdi.
             switch (browserName) {
                 case "chrome":
-                    System.setProperty(ChromeDriverService.CHROME_DRIVER_SILENT_OUTPUT_PROPERTY, "true");
                     WebDriverManager.chromedriver().setup();
                     threadDriver.set(new ChromeDriver()); // bu thread e chrome istenmişşse ve yoksa bir tane ekleniyor
                     break;
 
                 case "firefox":
-                    System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE, "/dev/null");
                     WebDriverManager.firefoxdriver().setup();
                     threadDriver.set(new FirefoxDriver());  // bu thread e firefox istenmişşse ve yoksa bir tane ekleniyor
                     break;
