@@ -118,6 +118,7 @@
                         <suiteXmlFile>src/test/java/XMLFiles/ParallelTesting_MasterReport.xml</suiteXmlFile>
                     </suiteXmlFiles>
 
+<!--                    Paralele çalışma yok iken diren runner calssı çalıştırmak aşağıdaki bölüm kullanılır.-->
 <!--                    <includes>-->
 <!--                        &lt;!&ndash; for  run class or classes  **/:bulunduğu lokasyonu bütün klasörlere göre bulabiliyor   &ndash;&gt;-->
 <!--                        <include>**/_04_TestRunnerSmoke.java</include>-->

@@ -11,7 +11,8 @@ import org.testng.annotations.Parameters;
         tags = "@Regression",
         features = {"src/test/java/FeatureFiles/"},
         glue = {"StepDefinitions"},
-        plugin= {"pretty","html:target/site/cucumber-pretty","json:target/cucumber/cucumber.json"}  // master report için
+        plugin= {"pretty","html:target/site/cucumber-pretty","json:target/cucumber/cucumber.json"}
+        // master report için
 )
 public class _08_TestRunnerParallel_MasterReport extends AbstractTestNGCucumberTests {
 
