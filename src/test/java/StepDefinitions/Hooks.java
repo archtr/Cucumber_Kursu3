@@ -29,6 +29,9 @@ public class Hooks {
         System.out.println("scenario sonucu="+ scenario.getStatus());
         System.out.println("scenario isFailed ?="+ scenario.isFailed());
 
+        //excele sonuçları yazacağız, path, scenario, browserTipi, zaman
+
+
         LocalDateTime date = LocalDateTime.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yy");
 
