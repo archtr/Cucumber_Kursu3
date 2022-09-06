@@ -1,5 +1,6 @@
 package StepDefinitions;
 
+import Utilities.ExcelUtility;
 import Utilities.GWD;
 import com.aventstack.extentreports.service.ExtentTestManager;
 import io.cucumber.java.After;
@@ -29,11 +30,11 @@ public class Hooks {
         System.out.println("scenario sonucu="+ scenario.getStatus());
         System.out.println("scenario isFailed ?="+ scenario.isFailed());
 
-        //excele sonuçları yazacağız, path, scenario, browserTipi, zaman
-
-
         LocalDateTime date = LocalDateTime.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yy");
+
+        ExcelUtility.writeExcel("src/test/java/ApachePOI/resource/ScenarioStatus.xlsx",
+                scenario, GWD.threadBrowserName.get(), date.format(formatter));
 
         if (scenario.isFailed()){
             // klasöre
@@ -50,7 +51,6 @@ public class Hooks {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
         }
 
         // ekran görüntüsü al senaryo hatalı ise
