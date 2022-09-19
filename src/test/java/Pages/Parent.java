@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class Parent {
+public class Parent{
 
     public void sendKeysFunction(WebElement element, String value) {//3.Aşama
         waitUntilVisible(element); // gözükene kadar bekle
