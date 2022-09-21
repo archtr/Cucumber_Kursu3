@@ -3,12 +3,14 @@ package Pages;
 import Utilities.GWD;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.List;
 
 public class DialogContent extends Parent{
 
@@ -72,6 +74,9 @@ public class DialogContent extends Parent{
 
     @FindBy(xpath = "(//button[@class='consent-give'])[1]")
     private WebElement acceptCookies;
+
+    @FindBy(xpath = "//tbody/tr/td[2]")
+    public List<WebElement> nameList;
 
     WebElement myElement;
     public void findAndSend(String strElement, String value){  // 2.aşama
