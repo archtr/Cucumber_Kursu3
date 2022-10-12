@@ -9,3 +9,44 @@ no ad     soyad   telefon
 2  mehmet Yılmaz  05053453434
 3  Ayşe   Yıldız  0502222434
 4  Ali    Veli    0505345434
+
+
+public class _03_Cevap3 extends JDBCParent {
+    //Bir excelde aşağıdaki bilgiler vardır
+    //        Bu bilgilerin yerleşeceği tabloyu kendi DB nizde MySQL arayüzünden
+    //        oluşturup. Burada JDBC üserinden aşağıdaki bilgileri okuyarak.
+    //        tabloya insert ediniz. (JDBC Mysql insert komutunun nasıl çalıştırılacağı
+    //        internetten araştırılacak.)
+    //
+    //no      ad      soyad      telefon
+    //1       İsmet   Temur      05053434343
+    //2       mehmet  Yılmaz     05052445566
+    //3       Ayşe    Yildiz     05052333144
+    //4       Ali     Veli       05053224950
+
+    @Test
+    public void test3() throws SQLException, IOException {
+        String path = "src/test/java/ApachePOI/resource/JDBCOdev.xlsx";
+        FileInputStream inputStream = new FileInputStream(path);
+        Workbook workbook = WorkbookFactory.create(inputStream);
+        Sheet sheet = workbook.getSheetAt(0);
+
+        String sql = " insert into cucumberOdev (id, ad,soyad,telefon) values(?,?,?,?)";
+        PreparedStatement ps = connection.prepareStatement(sql);
+
+        for (int i = 1; i <= sheet.getLastRowNum(); i++) {
+            Row row=sheet.getRow(i);
+            int id=(int )row.getCell(0).getNumericCellValue();
+            String ad=row.getCell(1).getStringCellValue();
+            String soyad=row.getCell(2).getStringCellValue();
+            long telefon= (long) row.getCell(3).getNumericCellValue();
+
+            sql="insert into cucumberOdev values('"+id+"','"+ad+"','"+soyad+"','"+telefon +"')";
+            ps.execute(sql);
+            ps.execute("commit");
+
+        }
+
+
+}
+}
